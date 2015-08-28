@@ -5,9 +5,6 @@
  */
 package myclone;
 
-// NOTE: imports
-//import java.util.HashMap;
-//import java.util.Map;
 import java.util.*; // Since we need 3 imports, this seems more prudent. Also endorsed by the Java documentation.
 
 /**
@@ -16,21 +13,30 @@ import java.util.*; // Since we need 3 imports, this seems more prudent. Also en
  * @author Smokie Lee
  */
 public class ShoutBox {
-    private UserInput u = new UserInput();
-    private String printMessageList;
-    private String singleMessage;
-//    private String messageListName;
-  
+
+  private UserInput u = new UserInput();
+  private String printMessageList;
+  private String singleMessage;
+  private Integer numMessages;
+  private HashMap<Integer, String> messageListName = new HashMap<>();
+
   public ShoutBox() {
-//    this(null);
-//    String printMessageList = "No messages entered.";
+    this(null);
+  }
+
+  public ShoutBox(String a) {
+//    this(a,null);
   }
   
-  public ShoutBox(String wtf) {
+  public void collectMessages() {
+//    collectMessages(u.getUserInteger("Message!"),messageListName);
+//    collectMessages(numMessages,messageListName);
+    collectMessages(getNumber(),messageListName);
+//    collectMessages(getNumber("How many messages would you like to enter?"),messageListName);
   }
-  
-//  public String collectMessages() {
-//    return collectMessages;
+
+//  public void setFullName() {
+//    setFullName(firstName,lastName);
 //  }
 
   /**
@@ -40,14 +46,12 @@ public class ShoutBox {
    * @param messageListName Name of the message list.
    */
   public void collectMessages(Integer numMessages, HashMap<Integer, String> messageListName) {
-//  UserInput u = new UserInput(); // FIXME: when commented, this creates the strange duplication.
-//  CreateMessageList l = new CreateMessageList();
-  u = new UserInput(); // NOTE: this works, don't know why (reusing variables?), but DO NOT COMMENT OR REMOVE.
+    u = new UserInput(); // NOTE: this works, don't know why (reusing variables?), but DO NOT COMMENT OR REMOVE.
     for (int i = 1; i <= numMessages; i++) { // Start the count at 1 instead of 0.
-      messageListName.put(i, u.getUserString("%nPlease enter a message:%n>> ")); // Add user input into hash map.
+      messageListName.put(i, u.getUserString("Please enter a message:%n>> ")); // Add user input into hash map.
     }
   }
-  
+
   /**
    * Print out each message in the array list in a numbered list.
    *
@@ -63,11 +67,12 @@ public class ShoutBox {
     return printMessageList;
   }
   
-  public void printMessageList() {
-    // setters/mutators
-//    this.printMessageList = printMessageList;
+  public String shoutOutCannedMessage() {
+    shoutOutCannedMessage(messageListName);
+//    return singleMessage;
+    return singleMessage;
   }
-  
+
   /**
    *
    * @param messageListName Name of array list to access.
@@ -77,22 +82,18 @@ public class ShoutBox {
     int messageNumber = 0; // Initalize variable for holding the user input.
     do {
       System.out.printf("%nSelect a message from the list below to print that message.%n%n");
-//      printMessageList(messageListName); // Print messages from the list in args.
-////      System.out.printf("%n>> ");
-//      messageNumber = u.getUserInteger(""); // Set user input to the index value. 
-      
+
       printMessageList(messageListName); // Print messages from the list in args.
       messageNumber = u.getUserInteger(""); // Set user input to the index value. 
     } while (messageNumber > messageListName.size()); // Keep iterating if user enters something outside the index.
 
     System.out.printf("%n");
 
-//    return printMessage(messageNumber, messageListName); // Print selected message.
-    
+//    singleMessage = printMessage(messageNumber, messageListName);
     singleMessage = printMessage(messageNumber, messageListName);
     return singleMessage;
   }
-  
+
   /**
    *
    * @param messageListName Name of array list to access.
@@ -105,82 +106,22 @@ public class ShoutBox {
     return message; // Return selected message.
   }
   
-//  public Integer OLDgetNumber() {
-////    System.out.printf(message);
-//////    Scanner userInputScanner = new Scanner(System.in); // Create a new scanner object to collect the user input.
-////    userInteger = userInputScanner.nextInt(); // Collect and store user input.
-////    return userInteger; // Returns the value of the user input.
-//    
-//    UserInput u = new UserInput();
-//    Integer count = u.getUserInteger("%nHow many messages would you like to enter? Please enter a number.%n>> ");
-//    return count;
-//    
-////    return getNumber2(null);
-//  }
+  public Integer getNumber() {
+//    Integer numMessages = 0;
+    getNumber("");
+    return numMessages;
+  }
   
+  // when passing getNumber without an argument need to print a default message ""
+
   /**
    *
    * @param message The message you would like to display to the user before getting input.
    * @return
    */
   public Integer getNumber(String message) {
-//    System.out.printf(message);
-////    Scanner userInputScanner = new Scanner(System.in); // Create a new scanner object to collect the user input.
-//    userInteger = userInputScanner.nextInt(); // Collect and store user input.
-//    return userInteger; // Returns the value of the user input.
-    
-//    UserInput u = new UserInput();
-    Integer count = u.getUserInteger(message);
-//    
-    return count;
+    numMessages = u.getUserInteger(message);
+    return numMessages;
   }
-  
-//  public void OLDcollectMessages() {
-//    CreateMessageList list = new CreateMessageList();
-//    HashMap<Integer, String> messageHashMap = new HashMap<>();
-//    list.setMessages(list.getNumber(), messageHashMap);
-//  }
-  
-//  public void OLDprintMessage() {
-//    CreateMessageList list = new CreateMessageList();
-//    HashMap<Integer, String> messageHashMap = new HashMap<>();
-//    list.shoutOutCannedMessage(messageHashMap);
-//  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//  // NOTE: below is old and working, but I don't think I need a main method here
-
-//  /**
-//   * @param args the command line arguments
-//   */
-//  public static void main(String[] args) {
-//
-//    // Create objects.
-//    CreateMessageList list = new CreateMessageList(); // Create a new message list object.
-//    HashMap<Integer, String> messageHashMap = new HashMap<>(); // Create hash map object to hold user messages.
-//
-//    // Welcome the user.
-//    System.out.printf("Welcome to the \"ShoutBox\" program. Let's shout some messages!%n%n");
-//
-//    // Collect number of messages (this is the size of the hash map) & the messages (these are the hash map values) from the user.
-//    list.setMessages(list.getNumber(), messageHashMap);
-//    
-//    // Print messages.
-//    list.shoutOutCannedMessage(messageHashMap);
-//
-//  }
 
 }

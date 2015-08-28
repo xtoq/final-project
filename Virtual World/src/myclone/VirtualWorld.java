@@ -5,55 +5,56 @@
  */
 package myclone;
 
-import java.util.HashMap;
-
+//import java.util.HashMap;
 
 /**
  * @author Smokie Lee
  */
 public class VirtualWorld {
-  
+
   /**
    * @param args the command line arguments
    */
   public static void main(String[] args) {
     MyClone clone = new MyClone();
-//    UserInput u = new UserInput();
-    ShoutBox s = new ShoutBox();
-//    CreateMessageList l = new CreateMessageList();
-    HashMap<Integer, String> messageHashMap = new HashMap<>();
-    
-//    String cloneFullName;
+    ShoutBox shout = new ShoutBox();
+//    HashMap<Integer, String> messageHashMap = new HashMap<>();
 
     // introduction
     clone.introduction();
     
-    // print name of avatar
-//    MyClone clone2 = new MyClone(clone.firstName(),clone.lastName(),clone.getFullName()); // NOTE: this is another way to do creating the clone...probably not better than chaining with no arg constructor
-    clone.getFullName();
+//    System.out.println("First, we're going to have to name your clone.");
     
-    // i: ask if correct
+//    System.out.printf("%nYour clone's name is currently %s%n", clone.getFullName());
+    clone.collectName();
+    
+    // print name of avatar
+//    System.out.printf("%n>>>>> Your clone's name is %s <<<<<%n", clone.getFullName());
+    
+//    System.out.printf("---------------------------------------%n");
     
     // shout box message collection
-//    s.collectMessages(); // NOTE: works but for some reason repeats the "please enter a message" the first time through
-//    l.setMessages(2, messageHashMap = new HashMap<>());
-//    l.setMessages(l.getNumber(), messageHashMap = new HashMap<>()); // FIXME: duplication is definitely somewhere within the getNumber method
-//    l.setMessages(u.getUserInteger("%nHow many messages would you like to enter? Please enter a number.%n>> "), messageHashMap = new HashMap<>()); // NOTE: this works perfectly.
-//    s.collectMessages(u.getUserInteger("%nHow many messages would you like to enter? Please enter a number.%n>> "), messageHashMap); // NOTE: this works perfectly.
-//    s.collectMessages(s.getNumber(),messageHashMap); // NOTE: this works perfectly.
-    s.collectMessages(s.getNumber("How many messages would you like to enter?"),messageHashMap);
-    
+//    shout.collectMessages(shout.getNumber("How many messages would you like to enter?"), messageHashMap);
+    System.out.printf("How many messages would you like to enter?%n");
+    shout.collectMessages();
+
     // collect message #
     
     // collect messages x message #
     
     // print all messages
-//    System.out.printf("%nMessage list:%n");
-//    s.printMessageList(messageHashMap);
     
     // let user select message to print
-    s.shoutOutCannedMessage(messageHashMap);
-    // print message
+//    shout.shoutOutCannedMessage(messageHashMap);
+    shout.shoutOutCannedMessage();
+    
+//    System.out.printf("\t========= RESULTS =========%n");
+//    System.out.printf("Clone name: %s%n",clone.getFullName());
+////    System.out.printf("Message list:");
+////    System.out.printf(shout.printMessageList());
+//    System.out.printf("Chosen message: %s%n");
+//    System.out.printf("");
+//    System.out.printf("\t===========================%n");
   }
-  
+
 }
