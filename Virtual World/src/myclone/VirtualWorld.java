@@ -18,12 +18,12 @@ public class VirtualWorld {
    */
   public static void main(String[] args) {
     MyClone clone = new MyClone();
-    UserInput u = new UserInput();
+//    UserInput u = new UserInput();
     ShoutBox s = new ShoutBox();
 //    CreateMessageList l = new CreateMessageList();
-    HashMap<Integer, String> messageHashMap;
+    HashMap<Integer, String> messageHashMap = new HashMap<>();
     
-    String cloneFullName;
+//    String cloneFullName;
 
     // introduction
     clone.introduction();
@@ -39,14 +39,17 @@ public class VirtualWorld {
 //    l.setMessages(2, messageHashMap = new HashMap<>());
 //    l.setMessages(l.getNumber(), messageHashMap = new HashMap<>()); // FIXME: duplication is definitely somewhere within the getNumber method
 //    l.setMessages(u.getUserInteger("%nHow many messages would you like to enter? Please enter a number.%n>> "), messageHashMap = new HashMap<>()); // NOTE: this works perfectly.
-    s.collectMessages(u.getUserInteger("%nHow many messages would you like to enter? Please enter a number.%n>> "), messageHashMap = new HashMap<>()); // NOTE: this works perfectly.
+    
+//    s.collectMessages(u.getUserInteger("%nHow many messages would you like to enter? Please enter a number.%n>> "), messageHashMap); // NOTE: this works perfectly.
+//    s.collectMessages(s.getNumber(),messageHashMap); // NOTE: this works perfectly.
+    s.collectMessages(s.getNumber("How many messages would you like to enter?"),messageHashMap);
     
     // collect message #
     
     // collect messages x message #
     
     // print all messages
-
+    s.printMessageList(messageHashMap);
   }
   
 }

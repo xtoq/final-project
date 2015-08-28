@@ -79,7 +79,8 @@ public class UserInput {
    * @return userInteger Returns the value input by the user.
    */
   public Integer getUserInteger(String message) {
-    System.out.printf(message);
+    System.out.printf("%s%nPlease enter a number.%n>> ",message);
+//    System.out.printf("%nPlease enter a number.%n>> ");
 //    Scanner userInputScanner = new Scanner(System.in); // Create a new scanner object to collect the user input.
     userInteger = userInputScanner.nextInt(); // Collect and store user input.
     return userInteger; // Returns the value of the user input.
