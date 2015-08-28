@@ -17,6 +17,9 @@ import java.util.*; // Since we need 3 imports, this seems more prudent. Also en
  */
 public class ShoutBox {
     private UserInput u = new UserInput();
+    private String printMessageList;
+    private String singleMessage;
+//    private String messageListName;
   
   public ShoutBox() {
 //    this(null);
@@ -25,6 +28,10 @@ public class ShoutBox {
   
   public ShoutBox(String wtf) {
   }
+  
+//  public String collectMessages() {
+//    return collectMessages;
+//  }
 
   /**
    * Collect messages from the user.
@@ -48,7 +55,7 @@ public class ShoutBox {
    * @return printMessageList Returns a numbered list of messages.
    */
   public String printMessageList(HashMap<Integer, String> messageListName) {
-    String printMessageList = null;
+    System.out.printf("Message list:%n");
     for (Map.Entry<Integer, String> entry : messageListName.entrySet()) { // Enahnced for loop is more efficient here when we're iterating through the set.
       System.out.printf("%s: %s\n", entry.getKey(), entry.getValue()); // Print key and value as a list.
       // TODO: format this with tabs for extra goodness
@@ -56,27 +63,34 @@ public class ShoutBox {
     return printMessageList;
   }
   
+  public void printMessageList() {
+    // setters/mutators
+//    this.printMessageList = printMessageList;
+  }
+  
   /**
    *
    * @param messageListName Name of array list to access.
-   * @return message Returns a single message via the printMessage function.
+   * @return singleMessage Returns a single message via the printMessage function.
    */
   public String shoutOutCannedMessage(HashMap<Integer, String> messageListName) {
-//    UserInput u = new UserInput();
     int messageNumber = 0; // Initalize variable for holding the user input.
     do {
-//      System.out.printf("%nPlease type a number from the list below to print that message.%n%n");
+      System.out.printf("%nSelect a message from the list below to print that message.%n%n");
 //      printMessageList(messageListName); // Print messages from the list in args.
-//      System.out.printf("%n>> ");
-//      messageNumber = u.getUserInteger(null); // Set user input to the index value. 
-      messageNumber = u.getUserInteger("%nPlease type a number from the list below to print that message.%n%n"); // Set user input to the index value. 
+////      System.out.printf("%n>> ");
+//      messageNumber = u.getUserInteger(""); // Set user input to the index value. 
+      
       printMessageList(messageListName); // Print messages from the list in args.
-      System.out.printf("%n>> ");
+      messageNumber = u.getUserInteger(""); // Set user input to the index value. 
     } while (messageNumber > messageListName.size()); // Keep iterating if user enters something outside the index.
 
     System.out.printf("%n");
 
-    return printMessage(messageNumber, messageListName); // Print selected message.
+//    return printMessage(messageNumber, messageListName); // Print selected message.
+    
+    singleMessage = printMessage(messageNumber, messageListName);
+    return singleMessage;
   }
   
   /**

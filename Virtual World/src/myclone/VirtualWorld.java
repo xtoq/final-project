@@ -29,8 +29,8 @@ public class VirtualWorld {
     clone.introduction();
     
     // print name of avatar
-//    clone.getFullName();
 //    MyClone clone2 = new MyClone(clone.firstName(),clone.lastName(),clone.getFullName()); // NOTE: this is another way to do creating the clone...probably not better than chaining with no arg constructor
+    clone.getFullName();
     
     // i: ask if correct
     
@@ -39,7 +39,6 @@ public class VirtualWorld {
 //    l.setMessages(2, messageHashMap = new HashMap<>());
 //    l.setMessages(l.getNumber(), messageHashMap = new HashMap<>()); // FIXME: duplication is definitely somewhere within the getNumber method
 //    l.setMessages(u.getUserInteger("%nHow many messages would you like to enter? Please enter a number.%n>> "), messageHashMap = new HashMap<>()); // NOTE: this works perfectly.
-    
 //    s.collectMessages(u.getUserInteger("%nHow many messages would you like to enter? Please enter a number.%n>> "), messageHashMap); // NOTE: this works perfectly.
 //    s.collectMessages(s.getNumber(),messageHashMap); // NOTE: this works perfectly.
     s.collectMessages(s.getNumber("How many messages would you like to enter?"),messageHashMap);
@@ -49,7 +48,12 @@ public class VirtualWorld {
     // collect messages x message #
     
     // print all messages
-    s.printMessageList(messageHashMap);
+//    System.out.printf("%nMessage list:%n");
+//    s.printMessageList(messageHashMap);
+    
+    // let user select message to print
+    s.shoutOutCannedMessage(messageHashMap);
+    // print message
   }
   
 }
