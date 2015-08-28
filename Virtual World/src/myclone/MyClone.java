@@ -41,7 +41,7 @@ public final class MyClone {
   
   public MyClone(String firstName, String lastName, String fullName, String intro) {
 //    introduction(); // Having this here runs first, but doesn't really makes sense to be here b/c it's not "transparent" maybe?
-//    fullName = getCloneName(); // Having this without the intro() makes it run twice
+//    fullName = getFullName(); // Having this without the intro() makes it run twice
   }
   
   public void introduction() {    
@@ -53,10 +53,6 @@ public final class MyClone {
 //    return printIntro;
   }
   
-//  public void setIntroduction() {
-//    // setter
-//  }
-  
   public String firstName() {
     firstName = u.getUserString("%nWhat would you like your clone's first name to be?%n>> ");
     return firstName;
@@ -67,7 +63,7 @@ public final class MyClone {
     return lastName;
   }
   
-  public String getCloneName() {
+  public String getFullName() {
     fullName = firstName() + " " + lastName();
 //    fullName = firstName + " " + lastName;
     System.out.printf("%nYour clone's name is %s%n",fullName);
