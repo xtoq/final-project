@@ -18,6 +18,11 @@ public class userInput {
    * No argument constructor.
    */
   public userInput() {
+    this(null); // Place "null" as the value of the argument and call the constructor again. Called constructor chaining.
+  }
+  
+  public userInput(String userString) {
+    // TODO: wtf
   }
 
   /**
