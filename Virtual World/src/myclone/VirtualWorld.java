@@ -10,18 +10,32 @@ package myclone;
  */
 public class VirtualWorld {
   
-//  introduction method
-//  - welcome user
-//  - get first name from user
-//  - get last name from user
-//  - explain what's going on
-//  - print name of avatar
-  
   /**
    * @param args the command line arguments
    */
   public static void main(String[] args) {
+    MyClone a = new MyClone();
     
+
+    // introduction
+    a.introduction();
+    
+    // collect first name
+    
+    // collect last name
+    
+    // print name of avatar
+    
+    // i: ask if correct
+    
+    // shout box message collection
+    
+    // collect message #
+    
+    // collect messages x message #
+    
+    // print all messages
+
   }
   
 }

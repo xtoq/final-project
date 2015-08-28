@@ -12,16 +12,16 @@ import java.util.Scanner;
  *
  * @author Smokie Lee
  */
-public class userInput {
+public class UserInput {
 
   /**
    * No argument constructor.
    */
-  public userInput() {
+  public UserInput() {
     this(null); // Place "null" as the value of the argument and call the constructor again. Called constructor chaining.
   }
   
-  public userInput(String userString) {
+  public UserInput(String userString) {
     // TODO: wtf
   }
 

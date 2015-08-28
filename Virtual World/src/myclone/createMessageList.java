@@ -12,16 +12,20 @@ import java.util.Map;
  *
  * @author Smokie Lee
  */
-public final class createMessageList {
+public final class CreateMessageList {
 
-  private final userInput u = new userInput(); // Create new user input object.
+  private final UserInput u = new UserInput(); // Create new user input object.
   private Integer count;
 
   /**
    * No argument constructor.
    */
-  public createMessageList() {
+  public CreateMessageList() {
+    this(null, null); // NOTE: constructor chaining
   }
+//  public createMessageList(String random) {
+//    this(null, null);
+//  }
 
   /**
    * Collect messages from user input and store them in a hash map.
@@ -29,7 +33,7 @@ public final class createMessageList {
    * @param numMessages Number of messages the user wants to store.
    * @param messageListName Name of the message list.
    */
-  public createMessageList(Integer numMessages, HashMap<Integer, String> messageListName) {
+  public CreateMessageList(Integer numMessages, HashMap<Integer, String> messageListName) {
 //    this.messageHashMap = new HashMap<>();
     // Set user input as messages.
     setMessages(numMessages, messageListName);

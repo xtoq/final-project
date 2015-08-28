@@ -21,7 +21,7 @@ public class ShoutBox {
   public static void main(String[] args) {
 
     // Create objects.
-    createMessageList list = new createMessageList(); // Create a new message list object.
+    CreateMessageList list = new CreateMessageList(); // Create a new message list object.
     HashMap<Integer, String> messageHashMap = new HashMap<>(); // Create hash map object to hold user messages.
 
     // Welcome the user.
