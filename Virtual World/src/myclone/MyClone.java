@@ -9,28 +9,42 @@ package myclone;
  *
  * @author Smokie Lee
  */
-public class MyClone {
+public final class MyClone {
   
   private final UserInput u = new UserInput();
   private String firstName;
   private String lastName;
   private String fullName;
   
-  //  introduction method
-  //  - welcome user
-  //  - get first name from user
-  //  - get last name from user
-  //  - explain what's going on
-  //  - print name of avatar
-  
   public MyClone() {
-//    this(null);
+    this(null);
     this.firstName = "Abby"; // NOTE: default content
     this.lastName = "Normal"; // NOTE: default content
+    this.fullName = firstName + " " + lastName;
   }
   
-  public void introduction() {
-    // intro method
+  public MyClone(String firstName) {
+//    this(firstName,null);
+  }
+  
+  public MyClone(String firstName,String lastName) {
+//    this(firstName,lastName,null);
+//    this.firstName = firstName();
+//    this.lastName = lastName();
+  }
+  
+  public MyClone(String firstName, String lastName, String fullName) {
+//    this(firstName,lastName,fullName,null);
+//    this.firstName = firstName();
+//    this.lastName = lastName();
+  }
+  
+  public MyClone(String firstName, String lastName, String fullName, String intro) {
+//    introduction(); // Having this here runs first, but doesn't really makes sense to be here b/c it's not "transparent" maybe?
+//    fullName = getCloneName(); // Having this without the intro() makes it run twice
+  }
+  
+  public void introduction() {    
 //    userInput u = new userInput();
 //    String printIntro = "";
     System.out.printf("\tWelcome to the \"Virtual World\" program!%n\t\tCreated by Smokie Lee");
@@ -53,8 +67,9 @@ public class MyClone {
     return lastName;
   }
   
-  public String cloneName() {
+  public String getCloneName() {
     fullName = firstName() + " " + lastName();
+//    fullName = firstName + " " + lastName;
     System.out.printf("%nYour clone's name is %s%n",fullName);
     return fullName;
   }

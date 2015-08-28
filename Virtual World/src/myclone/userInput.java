@@ -28,13 +28,13 @@ public class UserInput {
     this.userInt = 0; // NOTE: default content
   }
   
-  public UserInput(String message) {
-//    this(null,null);
-  }
+//  public UserInput(String message) {
+////    this(null,null);
+//  }
   
-  public UserInput(String message, String inputType) {
-//    this(null,null,null);
-  }
+//  public UserInput(String message, String inputType) {
+////    this(null,null,null);
+//  }
 
   /**
    * Get next line of user input.
@@ -47,7 +47,15 @@ public class UserInput {
     System.out.printf(message);
 //    Scanner userInputScanner = new Scanner(System.in); // Create a new scanner object to collect the user input.
 //    String userString = userInputScanner.nextLine(); // Collect and store user input.
-    this.userString = userInputScanner.nextLine(); // Collect and store user input.
+    userString = userInputScanner.nextLine(); // Collect and store user input.
+    return userString; // Returns the value of the user input.
+  }
+  
+  public String getUserString2() {
+//    System.out.printf(message);
+//    Scanner userInputScanner = new Scanner(System.in); // Create a new scanner object to collect the user input.
+//    String userString = userInputScanner.nextLine(); // Collect and store user input.
+    userString = userInputScanner.nextLine(); // Collect and store user input.
     return userString; // Returns the value of the user input.
   }
 

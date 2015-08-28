@@ -21,7 +21,7 @@ public final class CreateMessageList {
    * No argument constructor.
    */
   public CreateMessageList() {
-    this(null, null); // NOTE: constructor chaining
+//    this(null, null); // NOTE: constructor chaining
   }
 //  public createMessageList(String random) {
 //    this(null, null);
@@ -92,16 +92,23 @@ public final class CreateMessageList {
    * @param messageListName Name of the array message list to add to.
    */
   public void setMessages(Integer numMessages, HashMap<Integer, String> messageListName) {
-    for (int i = 1; i <= numMessages; i++) { // Start the count at 1 instead of 0.
+    for (int i = 1; i <= numMessages; i++) { // Start the count at 1 instead of 0. // NOTE: change this
       System.out.printf("%nPlease enter a message:%n>> ");
-//      messageListName.put(i, u.getUserString()); // Add user input into hash map.
-      messageListName.put(i, u.getUserString("Change this message to be meaningful.")); // Add user input into hash map.
+//      messageListName.put(i, u.getUserString("this is the put method!%n")); // Add user input into hash map.
+      messageListName.put(i, u.getUserString2()); // Add user input into hash map.
+//      System.out.printf("setMessages method%n%n");
     }
   }
     
+//  public Integer getNumber() {
+//    System.out.printf("How many messages would you like to enter? Please enter a number.%n>> ");
+//    this.count = u.getUserInteger("");
+//    return count;
+//  }
+  
   public Integer getNumber() {
-    System.out.printf("How many messages would you like to enter? Please enter a number.%n>> ");
-    this.count = u.getUserInteger(null);
+//    this.count = u.getUserInteger("%nHow many messages would you like to enter? Please enter a number.%n>> ");
+    this.count = u.getUserInteger("%nPrint X # of times%n>> ");
     return count;
   }
 }
