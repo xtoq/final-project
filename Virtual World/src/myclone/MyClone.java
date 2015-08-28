@@ -11,6 +11,12 @@ package myclone;
  */
 public class MyClone {
   
+  UserInput u = new UserInput();
+  
+  private String firstName;
+  private String lastName;
+  private String fullName;
+  
   //  introduction method
   //  - welcome user
   //  - get first name from user
@@ -35,5 +41,22 @@ public class MyClone {
 //  public void setIntroduction() {
 //    // setter
 //  }
+  
+  public String printFirstName() {
+    firstName = u.getUserString("%nWhat would you like your clone's first name to be?%n>> ");
+    return firstName;
+  }
+  
+  public String printLastName() {
+    lastName = u.getUserString("%nWhat would you like your clone's last name to be?%n>> ");
+    return lastName;
+  }
+  
+  public String cloneName() {
+//    String fullName = firstName + " " + lastName;
+    fullName = printFirstName() + " " + printLastName();
+    System.out.printf("%nYour clone's name is %s%n",fullName);
+    return fullName;
+  }
   
 }

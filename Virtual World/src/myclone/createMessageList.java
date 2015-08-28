@@ -77,7 +77,7 @@ public final class CreateMessageList {
       System.out.printf("%nPlease type a number from the list below to print that message.%n%n");
       printMessageList(messageListName); // Print messages from the list in args.
       System.out.printf("%n>> ");
-      messageNumber = u.getUserInteger(); // Set user input to the index value. 
+      messageNumber = u.getUserInteger(null); // Set user input to the index value. 
     } while (messageNumber > messageListName.size()); // Keep iterating if user enters something outside the array index.
 
     System.out.printf("%n");
@@ -94,13 +94,14 @@ public final class CreateMessageList {
   public void setMessages(Integer numMessages, HashMap<Integer, String> messageListName) {
     for (int i = 1; i <= numMessages; i++) { // Start the count at 1 instead of 0.
       System.out.printf("%nPlease enter a message:%n>> ");
-      messageListName.put(i, u.getUserString()); // Add user input into hash map.
+//      messageListName.put(i, u.getUserString()); // Add user input into hash map.
+      messageListName.put(i, u.getUserString("Change this message to be meaningful.")); // Add user input into hash map.
     }
   }
     
   public Integer getNumber() {
     System.out.printf("How many messages would you like to enter? Please enter a number.%n>> ");
-    this.count = u.getUserInteger();
+    this.count = u.getUserInteger(null);
     return count;
   }
 }

@@ -15,16 +15,18 @@ public class VirtualWorld {
    */
   public static void main(String[] args) {
     MyClone a = new MyClone();
-    
+//    UserInput u = new UserInput();
 
     // introduction
     a.introduction();
     
     // collect first name
+//    u.getUserString();
     
     // collect last name
     
     // print name of avatar
+    a.cloneName();
     
     // i: ask if correct
     
