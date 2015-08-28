@@ -11,8 +11,7 @@ package myclone;
  */
 public class MyClone {
   
-  UserInput u = new UserInput();
-  
+  private final UserInput u = new UserInput();
   private String firstName;
   private String lastName;
   private String fullName;
@@ -26,12 +25,14 @@ public class MyClone {
   
   public MyClone() {
 //    this(null);
+    this.firstName = "Abby"; // NOTE: default content
+    this.lastName = "Normal"; // NOTE: default content
   }
   
   public void introduction() {
     // intro method
 //    userInput u = new userInput();
-    String printIntro = "";
+//    String printIntro = "";
     System.out.printf("\tWelcome to the \"Virtual World\" program!%n\t\tCreated by Smokie Lee");
     System.out.printf("%n\t---------------------------------------%n");
     System.out.printf("");
@@ -53,7 +54,6 @@ public class MyClone {
   }
   
   public String cloneName() {
-//    String fullName = firstName + " " + lastName;
     fullName = printFirstName() + " " + printLastName();
     System.out.printf("%nYour clone's name is %s%n",fullName);
     return fullName;

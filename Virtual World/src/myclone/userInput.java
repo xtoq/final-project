@@ -13,21 +13,28 @@ import java.util.Scanner;
  * @author Smokie Lee
  */
 public class UserInput {
+  private final Scanner userInputScanner = new Scanner(System.in);
+  private String userString;
+  private Integer userInteger;
+  private int userInt;
 
   /**
    * No argument constructor.
    */
   public UserInput() {
-//    this(null); // Place "null" as the value of the argument and call the constructor again. Called constructor chaining.
+//    this(null); // Place "null" as the value of the argument and call the constructor again. Called constructor chaining. // NOTE: this could be something like DEFAULT CONTENT
+    this.userString = null;
+    this.userInteger = null;
+    this.userInt = 0;
   }
   
-//  public UserInput(String message) {
-////    this(null,null);
-//  }
+  public UserInput(String message) {
+//    this(null,null);
+  }
   
-//  public UserInput(String message, String userString) {
+  public UserInput(String message, String inputType) {
 //    this(null,null,null);
-//  }
+  }
 
   /**
    * Get next line of user input.
@@ -38,9 +45,9 @@ public class UserInput {
 //  public String getUserString() {
   public String getUserString(String message) {
     System.out.printf(message);
-    Scanner userInputScanner = new Scanner(System.in); // Create a new scanner object to collect the user input.
-    String userString = userInputScanner.nextLine(); // Create a new string variable to store the user input.
-//    userString = userInputScanner.nextLine(); // Create a new string variable to store the user input.
+//    Scanner userInputScanner = new Scanner(System.in); // Create a new scanner object to collect the user input.
+//    String userString = userInputScanner.nextLine(); // Collect and store user input.
+    this.userString = userInputScanner.nextLine(); // Collect and store user input.
     return userString; // Returns the value of the user input.
   }
 
@@ -52,8 +59,8 @@ public class UserInput {
    */
   public int getUserInt(String message) {
     System.out.printf(message);
-    Scanner userInputScanner = new Scanner(System.in); // Create a new scanner object to collect the user input.
-    int userInt = userInputScanner.nextInt(); // Create a new integer (primitive) variable to store the user input.
+//    Scanner userInputScanner = new Scanner(System.in); // Create a new scanner object to collect the user input.
+    userInt = userInputScanner.nextInt(); // Collect and store user input.
     return userInt; // Returns the value of the user input.
   }
 
@@ -65,8 +72,8 @@ public class UserInput {
    */
   public Integer getUserInteger(String message) {
     System.out.printf(message);
-    Scanner userInputScanner = new Scanner(System.in); // Create a new scanner object to collect the user input.
-    Integer userInteger = userInputScanner.nextInt(); // Create a new integer variable to store the user input.
+//    Scanner userInputScanner = new Scanner(System.in); // Create a new scanner object to collect the user input.
+    userInteger = userInputScanner.nextInt(); // Collect and store user input.
     return userInteger; // Returns the value of the user input.
   }
 }
