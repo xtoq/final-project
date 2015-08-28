@@ -23,9 +23,9 @@ public class UserInput {
    */
   public UserInput() {
 //    this(null); // Place "null" as the value of the argument and call the constructor again. Called constructor chaining. // NOTE: this could be something like DEFAULT CONTENT
-    this.userString = null;
-    this.userInteger = null;
-    this.userInt = 0;
+    this.userString = null; // NOTE: default content
+    this.userInteger = null; // NOTE: default content
+    this.userInt = 0; // NOTE: default content
   }
   
   public UserInput(String message) {

@@ -20,11 +20,6 @@ public class VirtualWorld {
     // introduction
     a.introduction();
     
-    // collect first name
-//    u.getUserString();
-    
-    // collect last name
-    
     // print name of avatar
     a.cloneName();
     

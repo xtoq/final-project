@@ -43,18 +43,18 @@ public class MyClone {
 //    // setter
 //  }
   
-  public String printFirstName() {
+  public String firstName() {
     firstName = u.getUserString("%nWhat would you like your clone's first name to be?%n>> ");
     return firstName;
   }
   
-  public String printLastName() {
+  public String lastName() {
     lastName = u.getUserString("%nWhat would you like your clone's last name to be?%n>> ");
     return lastName;
   }
   
   public String cloneName() {
-    fullName = printFirstName() + " " + printLastName();
+    fullName = firstName() + " " + lastName();
     System.out.printf("%nYour clone's name is %s%n",fullName);
     return fullName;
   }
