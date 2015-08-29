@@ -17,52 +17,48 @@ public class VirtualWorld {
    */
   public static void main(String[] args) {
     
-    MyClone clone = new MyClone();
-    
     // debug
-    System.out.printf("\t========= RESULTS =========%n");
-    System.out.printf("Clone name: %s%n",clone.getFullName());
-//    System.out.printf("Message list:");
-//    System.out.printf(shout.printMessageList());
-//    System.out.printf("Chosen message: %s%n");
-//    System.out.printf("");
-//    System.out.printf("\t===========================%n");
-    clone.setFullName("Smokie","Lee");
-    System.out.printf("Clone name: %s%n",clone.getFullName());
+    MyClone clone = new MyClone();
+//    UserInput u = new UserInput();
+    ShoutBox shout = new ShoutBox();
     
-    UserInput u = new UserInput();
-    u.setUserString(u.collectUserString("String: "));
-    System.out.printf("%s%n",u.userString());
-//    System.out.printf("%s%n",u.collectUserString());
-
+    System.out.printf("Number of messages: %s%n",shout.getNumMessages());
+    System.out.printf("First name: %s%nLast name: %s%nFull name: %s%n",clone.getFirstName(),clone.getLastName(),clone.getFullName());
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    // ============================================== WORKING ==========================================================
-//    MyClone clone = new MyClone();
-//    ShoutBox shout = new ShoutBox();
-    // introduction
 //    clone.introduction();
 //    clone.collectName();
-    
-    // print name of avatar
-//    System.out.printf("%n>>>>> Your clone's name is %s <<<<<%n", clone.getFullName());
-//    System.out.printf("---------------------------------------%n");
-    
-    // shout box message collection
-//    System.out.printf("How many messages would you like to enter?%n");
 //    shout.collectMessages();
     
-    // let user select message to print
+//    shout.setNumMessages(3);
+    shout.collectNumMessages();
+    
+    
+    System.out.printf("\t%n========= RESULTS =========%n");
+    System.out.printf("Number of messages: %s%n",shout.getNumMessages());
+    System.out.printf("First name: %s%nLast name: %s%nFull name: %s%n",clone.getFirstName(),clone.getLastName(),clone.getFullName());
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+//    // ============================================== WORKING ==========================================================
+//    MyClone clone = new MyClone();
+//    ShoutBox shout = new ShoutBox();
+//    // introduction
+//    clone.introduction();
+//    
+//    // shout box message collection
+//    System.out.printf("How many messages would you like to enter?%n");
+//    shout.collectMessages();
+//    
+//    // let user select message to print
 //    shout.shoutOutCannedMessage();
   }
 

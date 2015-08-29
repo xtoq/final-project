@@ -36,7 +36,7 @@ public class UserInput {
   }
   
   public String collectUserString() {
-    return userString = userInputScanner.nextLine();
+    return collectUserString("");
   }
   
   /**
@@ -46,12 +46,12 @@ public class UserInput {
    * @return userString Returns the value input by the user.
    */
   public String collectUserString(String message) {
-    System.out.printf(message);
+    System.out.printf("%n%s%n>> ",message);
     return userString = userInputScanner.nextLine();
   }
 
   public Integer collectUserInteger() {
-    return userInteger = userInputScanner.nextInt();
+    return collectUserInteger("");
   }
 
   /**
@@ -61,7 +61,7 @@ public class UserInput {
    * @return userInteger Returns the value input by the user.
    */
   public Integer collectUserInteger(String message) {
-    System.out.printf(message);
+    System.out.printf("%n%s%n>> ",message);
     return userInteger = userInputScanner.nextInt();
   }
   

@@ -14,36 +14,27 @@ public final class MyClone {
   private String firstName;
   private String lastName;
   private String fullName;
-  private final UserInput u = new UserInput(); // TODO: either remove this as a variable or setup mut/acc for it
   
   public MyClone() {
-//    this(null);
-    this.firstName = "Dee"; // NOTE: default content
-    this.lastName = "Fault"; // NOTE: default content
-    this.fullName = firstName + " " + lastName; // NOTE: default content
-    // TODO: either set userInput here or remove it (see above)
+    this(null);
+    this.firstName = "Dee";
+    this.lastName = "Fault";
+    this.fullName = firstName + " " + lastName;
   }
   
-  // TODO: MUST ADD ANOTHER CONSTRUCTOR should also note that you're doing constructor chaining/DRY
+  public MyClone(String firstName) {
+    this(firstName,null);
+  }
   
-//  public MyClone(String firstName) {
-//    this(firstName,null);
-//    this.firstName = firstName; // NOTE: default content
-////    this.lastName = "Fault"; // NOTE: default content
-////    this.fullName = firstName + " " + lastName; // NOTE: default content
-//  }
+  public MyClone(String firstName,String lastName) {
+    this(firstName,lastName,null);
+  }
   
-//  public MyClone(String firstName,String lastName) {
-////    this.firstName = firstName; // NOTE: default content
-////    this.lastName = lastName; // NOTE: default content
-////    this.fullName = firstName + " " + lastName; // NOTE: default content
-//  }
-  
-//  public MyClone(String firstName,String lastName,String fullName) {
-//    this.firstName = firstName; // NOTE: default content
-//    this.lastName = lastName; // NOTE: default content
-//    this.fullName = fullName; // NOTE: default content
-//  }
+  public MyClone(String firstName,String lastName,String fullName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.fullName = fullName;
+  }
 
   public String getFirstName() {    
     return firstName;
@@ -58,45 +49,45 @@ public final class MyClone {
   }
   
   public void setFirstName() {
-    setFirstName(firstName = u.collectUserString("%nPlease enter a first name.%n>> "));
+    setFirstName(getFirstName());
   }
   
   public void setLastName() {
-    setLastName(lastName = u.collectUserString("%nPlease enter a last name.%n>> "));
+    setLastName(getLastName());
   }
   
   public void setFullName() {
-    setFullName(firstName,lastName);
+    setFullName(getFirstName(),getLastName());
   }
   
   public void setFirstName(String firstName) {
     this.firstName = firstName;
+    setFullName();
   }
   
   public void setLastName(String lastName) {
     this.lastName = lastName;
+    setFullName();
   }
   
   public void setFullName(String firstName,String lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
     this.fullName = firstName +  " " + lastName;
   }
   
   public String collectName() {
-    setFirstName();
-    setLastName();
-    setFullName();
+    UserInput u = new UserInput();
+    setFirstName(u.collectUserString("Please enter a first name."));
+    setLastName(u.collectUserString("Please enter a last name."));
     return getFullName();
   }
 
   public void introduction() {
     System.out.printf("\tWelcome to the \"Virtual World\" program!%n\t\tCreated by Smokie Lee");
-    System.out.printf("%n\t---------------------------------------");
-//    System.out.printf("This program collects information from the user to create a virtual clone with a vocabulary.%n%n");
-//    System.out.printf("%n\t---------------------------------------%n%n");
-    System.out.println();
-    // FUTURE: file input here for the "narrative"?
-    
-    // TODO: must use accessor/getter for get current value of first/last name attributes...
+    System.out.printf("%n\t---------------------------------------%n");
+    collectName();
+    System.out.printf("%nYour clone's name is %s.%n",getFullName());
   }
 
 }
