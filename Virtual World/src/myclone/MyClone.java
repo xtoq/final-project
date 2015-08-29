@@ -14,14 +14,17 @@ public final class MyClone {
   private String firstName;
   private String lastName;
   private String fullName;
-  private final UserInput u = new UserInput();
+  private final UserInput u = new UserInput(); // TODO: either remove this as a variable or setup mut/acc for it
   
   public MyClone() {
 //    this(null);
     this.firstName = "Dee"; // NOTE: default content
     this.lastName = "Fault"; // NOTE: default content
     this.fullName = firstName + " " + lastName; // NOTE: default content
+    // TODO: either set userInput here or remove it (see above)
   }
+  
+  // TODO: MUST ADD ANOTHER CONSTRUCTOR should also note that you're doing constructor chaining/DRY
   
 //  public MyClone(String firstName) {
 //    this(firstName,null);
@@ -92,6 +95,8 @@ public final class MyClone {
 //    System.out.printf("%n\t---------------------------------------%n%n");
     System.out.println();
     // TODO: file input here for the "narrative"?
+    
+    // TODO: must use accessor/getter for get current value of first/last name attributes...
   }
 
 }

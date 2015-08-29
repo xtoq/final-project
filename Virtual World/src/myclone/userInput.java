@@ -70,4 +70,6 @@ public class UserInput {
     userInteger = userInputScanner.nextInt(); // Collect and store user input.
     return userInteger; // Returns the value of the user input.
   }
+  
+  // TODO: create setters for user string variables (this will likely solve my problems in other ares...derp
 }
