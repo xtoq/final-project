@@ -14,7 +14,7 @@ import java.util.Scanner;
  */
 public class UserInput {
 
-  private final Scanner userInputScanner; // FUTURE: be sure to check that this being final still allows us to set the variable!
+  private final Scanner userInputScanner;
   private String userString;
   private Integer userInteger;
 
@@ -61,7 +61,6 @@ public class UserInput {
    * @return userInteger Returns the value input by the user.
    */
   public Integer collectUserInteger(String message) {
-//    System.out.printf("%s%nPlease enter a number.%n>> ", message);
     System.out.printf(message);
     return userInteger = userInputScanner.nextInt();
   }
@@ -81,30 +80,4 @@ public class UserInput {
   public void setUserInteger(Integer userInteger) {
     this.userInteger = userInteger;
   }
-
-//  public void setFirstName() {
-//    setFirstName(this.firstName = u.collectUserString("%nPlease enter your clone's first name.%n>> "));
-//  }
-  
-  
-  
-//  public String collectUserString2() {
-//    userString = userInputScanner.nextLine(); // Collect and store user input.
-//    return userString; // Returns the value of the user input.
-//  }
-  
-//  /**
-//   * Get next integer (primitive) of user input.
-//   *
-//   * @param message
-//   * @return userInt Returns the value input by the user.
-//   */
-//  public int getUserInt(String message) {
-////    System.out.printf(message);
-//    System.out.printf("%s%nPlease enter a number.%n>> ", message);
-//    userInt = userInputScanner.nextInt(); // Collect and store user input.
-//    return userInt; // Returns the value of the user input.
-//  }
-  
-  // TODO: create setters for user string variables (this will likely solve my problems in other ares...derp
 }
