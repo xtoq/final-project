@@ -48,7 +48,7 @@ public class ShoutBox {
   public void collectMessages(Integer numMessages, HashMap<Integer, String> messageListName) {
     u = new UserInput(); // NOTE: this works, don't know why (reusing variables?), but DO NOT COMMENT OR REMOVE.
     for (int i = 1; i <= numMessages; i++) { // Start the count at 1 instead of 0.
-      messageListName.put(i, u.getUserString("Please enter a message:%n>> ")); // Add user input into hash map.
+      messageListName.put(i, u.collectUserString("Please enter a message:%n>> ")); // Add user input into hash map.
     }
   }
 
@@ -62,7 +62,7 @@ public class ShoutBox {
     System.out.printf("Message list:%n");
     for (Map.Entry<Integer, String> entry : messageListName.entrySet()) { // Enahnced for loop is more efficient here when we're iterating through the set.
       System.out.printf("%s: %s\n", entry.getKey(), entry.getValue()); // Print key and value as a list.
-      // TODO: format this with tabs for extra goodness
+      // FUTURE: format this with tabs for extra goodness
     }
     return printMessageList;
   }
@@ -84,7 +84,7 @@ public class ShoutBox {
       System.out.printf("%nSelect a message from the list below to print that message.%n%n");
 
       printMessageList(messageListName); // Print messages from the list in args.
-      messageNumber = u.getUserInteger(""); // Set user input to the index value. 
+      messageNumber = u.collectUserInteger(""); // Set user input to the index value. 
     } while (messageNumber > messageListName.size()); // Keep iterating if user enters something outside the index.
 
     System.out.printf("%n");
@@ -120,7 +120,7 @@ public class ShoutBox {
    * @return
    */
   public Integer getNumber(String message) {
-    numMessages = u.getUserInteger(message);
+    numMessages = u.collectUserInteger(message);
     return numMessages;
   }
 

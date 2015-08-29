@@ -58,11 +58,11 @@ public final class MyClone {
   }
   
   public void setFirstName() {
-    setFirstName(this.firstName = u.getUserString("%nPlease enter your clone's first name.%n>> "));
+    setFirstName(firstName = u.collectUserString("%nPlease enter a first name.%n>> "));
   }
   
   public void setLastName() {
-    setLastName(this.lastName = u.getUserString("%nPlease enter your clone's last name.%n>> "));
+    setLastName(lastName = u.collectUserString("%nPlease enter a last name.%n>> "));
   }
   
   public void setFullName() {
@@ -94,7 +94,7 @@ public final class MyClone {
 //    System.out.printf("This program collects information from the user to create a virtual clone with a vocabulary.%n%n");
 //    System.out.printf("%n\t---------------------------------------%n%n");
     System.out.println();
-    // TODO: file input here for the "narrative"?
+    // FUTURE: file input here for the "narrative"?
     
     // TODO: must use accessor/getter for get current value of first/last name attributes...
   }

@@ -14,18 +14,29 @@ import java.util.Scanner;
  */
 public class UserInput {
 
-  private final Scanner userInputScanner = new Scanner(System.in);
+  private final Scanner userInputScanner; // FUTURE: be sure to check that this being final still allows us to set the variable!
   private String userString;
   private Integer userInteger;
-//  private int userInt;
 
   /**
    * No argument constructor.
    */
   public UserInput() {
-    this.userString = null; // NOTE: default content
-    this.userInteger = null; // NOTE: default content
-//    this.userInt = 0; // NOTE: default content
+    this.userInputScanner = new Scanner(System.in);
+    this.userString = "None";
+    this.userInteger = 0;
+  }
+  
+  public String userString() {
+    return userString;
+  }
+  
+  public Integer userInteger() {
+    return userInteger;
+  }
+  
+  public String collectUserString() {
+    return userString = userInputScanner.nextLine();
   }
   
   /**
@@ -34,18 +45,54 @@ public class UserInput {
    * @param message
    * @return userString Returns the value input by the user.
    */
-//  public String getUserString() {
-  public String getUserString(String message) {
+  public String collectUserString(String message) {
     System.out.printf(message);
-    userString = userInputScanner.nextLine(); // Collect and store user input.
-    return userString; // Returns the value of the user input.
+    return userString = userInputScanner.nextLine();
   }
 
-  public String getUserString2() {
-    userString = userInputScanner.nextLine(); // Collect and store user input.
-    return userString; // Returns the value of the user input.
+  public Integer collectUserInteger() {
+    return userInteger = userInputScanner.nextInt();
   }
 
+  /**
+   * Get next integer of user input.
+   *
+   * @param message
+   * @return userInteger Returns the value input by the user.
+   */
+  public Integer collectUserInteger(String message) {
+//    System.out.printf("%s%nPlease enter a number.%n>> ", message);
+    System.out.printf(message);
+    return userInteger = userInputScanner.nextInt();
+  }
+  
+  public void setUserString() {
+    setUserString(userString);
+  }
+  
+  public void setUserString(String userString) {
+    this.userString = userString;
+  }
+
+  public void setUserInteger() {
+    setUserInteger(userInteger);
+  }
+  
+  public void setUserInteger(Integer userInteger) {
+    this.userInteger = userInteger;
+  }
+
+//  public void setFirstName() {
+//    setFirstName(this.firstName = u.collectUserString("%nPlease enter your clone's first name.%n>> "));
+//  }
+  
+  
+  
+//  public String collectUserString2() {
+//    userString = userInputScanner.nextLine(); // Collect and store user input.
+//    return userString; // Returns the value of the user input.
+//  }
+  
 //  /**
 //   * Get next integer (primitive) of user input.
 //   *
@@ -58,18 +105,6 @@ public class UserInput {
 //    userInt = userInputScanner.nextInt(); // Collect and store user input.
 //    return userInt; // Returns the value of the user input.
 //  }
-
-  /**
-   * Get next integer of user input.
-   *
-   * @param message
-   * @return userInteger Returns the value input by the user.
-   */
-  public Integer getUserInteger(String message) {
-    System.out.printf("%s%nPlease enter a number.%n>> ", message);
-    userInteger = userInputScanner.nextInt(); // Collect and store user input.
-    return userInteger; // Returns the value of the user input.
-  }
   
   // TODO: create setters for user string variables (this will likely solve my problems in other ares...derp
 }
