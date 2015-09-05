@@ -232,4 +232,5 @@ public class ShoutBox {
     collectMessages();
   }
 
+  // TODO: must have shoutOutCanneMessage() and shoutOutRandomMessage() methods
 }
