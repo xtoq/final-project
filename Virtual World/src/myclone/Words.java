@@ -246,7 +246,7 @@ public class Words {
    */
   public void setSentence() {
 //    this.sentence = getSubject() + " " + getVerb() + " " + getAdjective();
-    this.sentence = getSubject() + " " + getVerb() + " " + getAdjective() + " " + getObject() + " " + getAdverb() + ".";
+    this.sentence = getSubject() + " " + getVerb() + " " + getAdjective() + " " + getObject() + " " + getAdverb();
   }
   
   /**
@@ -311,10 +311,17 @@ public class Words {
   }
   
   public void generateSentenceList() {
-    setSentenceList(getSentence());
+//    setSentenceList(getSentence());
+      for (int i = 0; i < 10; i++) {
+        // generate sentence
+        generateSentence();
+        // add sentence into sentence list/generate sentence list
+        setSentenceList(getSentence());
+      }
 //    // debugging
 //    Print p = new Print();
-//    p.print("","Generated sentence:",getSentence());
+//    p.print("","Sentence list:");
+//    p.printList(getSentenceList());
   }
   
   /**
@@ -334,6 +341,42 @@ public class Words {
 //    p.print(getSubject());
 //    p.print("","Random verb word:");
 //    p.print(getVerb());
+  }
+  
+  public void chooseSentence() {
+    // let user choose a message from the list
+    UserInput u = new UserInput();
+    Integer messageNumber;
+    Print p = new Print();
+    // print sentence list
+    p.print("","Sentence list:");
+    p.printList(getSentenceList());
+    // do {collect input} while user input is outside array
+    do {
+//      // print sentence list
+//      p.print("","Sentence list:");
+//      p.printList(w.getSentenceList());
+      // collect user input
+      messageNumber = u.collectUserInteger("Select a message from the list above to print that message."); // Sets index value to user input.
+//      setMessageNumber(u.collectUserInteger()); // Sets index value to user input.
+    } while (messageNumber > getSentenceList().size()); // Keep iterating if user enters something outside the index.
+    p.print("","You chose:",p.printListElement(messageNumber - 1,getSentenceList()));
+  }
+  
+  public Integer OLDchooseSentence() {
+    // let user choose a message from the list
+    UserInput u = new UserInput();
+    Integer messageNumber;
+    // do {print list & collect input} while user input is outside array
+    do {
+//      // print sentence list
+//      p.print("","Sentence list:");
+//      p.printList(w.getSentenceList());
+      // collect user input
+      messageNumber = u.collectUserInteger("Select a message from the list above to print that message."); // Sets index value to user input.
+//      setMessageNumber(u.collectUserInteger()); // Sets index value to user input.
+    } while (messageNumber > getSentenceList().size()); // Keep iterating if user enters something outside the index.
+    return messageNumber - 1; // subtract 1 because the index starts at 0 not 1
   }
   
   
