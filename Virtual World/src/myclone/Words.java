@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package myclone;
 
 import java.util.*;
@@ -15,10 +10,11 @@ public class Words {
   
   // initialize variables
   private Object subject, verb, adjective, object, adverb, sentence;
-  private final ArrayList<String> subjectList, verbList, adjectiveList, objectList, adverbList/*, sentenceList*/;
+  private final ArrayList<String> subjectList, verbList, adjectiveList, objectList, adverbList;
   private final ArrayList<Object> sentenceList;
-  private final HashMap<Integer, Object> sentenceListHash;
+  private final HashMap<Integer, Object> sentenceHash;
   private final Print p;
+  private Integer i;
 
   // constructor(s)
   public Words() {
@@ -34,8 +30,9 @@ public class Words {
     this.objectList = new ArrayList<>();
     this.adverbList = new ArrayList<>();
     this.sentenceList = new ArrayList<>();
-    this.sentenceListHash = new HashMap<>();
+    this.sentenceHash = new HashMap<>();
     this.p = new Print();
+    this.i = 0;
   }
 
   // getters/accessors (return)
@@ -44,7 +41,7 @@ public class Words {
    * @return the value of subject
    */
   public Object getSubject() {
-    return subject; // Returns the value of subject.
+    return subject;
   }
   
   /**
@@ -53,7 +50,7 @@ public class Words {
    */
   public ArrayList getSubjectList() {
 //    setSubjectList();
-    return subjectList; // Returns the value of subjectList.
+    return subjectList;
   }
 
   /**
@@ -61,7 +58,7 @@ public class Words {
    * @return the value of verb
    */
   public Object getVerb() {
-    return verb; // Returns the value of verb.
+    return verb;
   }
   
   /**
@@ -70,7 +67,7 @@ public class Words {
    */
   public ArrayList getVerbList() {
 //    setVerbList();
-    return verbList; // Returns the value of verbList.
+    return verbList;
   }
 
   /**
@@ -78,7 +75,7 @@ public class Words {
    * @return the value of adjective
    */
   public Object getAdjective() {
-    return adjective; // Returns the value of adjective.
+    return adjective;
   }
   
   /**
@@ -86,7 +83,7 @@ public class Words {
    * @return the value of adjectiveList
    */
   public ArrayList getAdjectiveList() {
-    return adjectiveList; // Returns the value of adjectiveList.
+    return adjectiveList;
   }
 
   /**
@@ -94,7 +91,7 @@ public class Words {
    * @return the value of object
    */
   public Object getObject() {
-    return object; // Returns the value of object.
+    return object;
   }
   
   /**
@@ -102,7 +99,7 @@ public class Words {
    * @return the value of objectList
    */
   public ArrayList getObjectList() {
-    return objectList; // Returns the value of objectList.
+    return objectList;
   }
 
   /**
@@ -110,7 +107,7 @@ public class Words {
    * @return the value of adverb
    */
   public Object getAdverb() {
-    return adverb; // Returns the value of adverb.
+    return adverb;
   }
   
   /**
@@ -118,7 +115,7 @@ public class Words {
    * @return the value of adverbList
    */
   public ArrayList getAdverbList() {
-    return adverbList; // Returns the value of adverbList.
+    return adverbList;
   }
   
   public Object getSentence() {
@@ -130,15 +127,15 @@ public class Words {
    * @return the value of sentenceList
    */
   public ArrayList getSentenceList() {
-    return sentenceList; // Returns the value of sentenceList.
+    return sentenceList;
   }
   
   /**
-   * Returns the value of the sentenceListHash variable.
-   * @return the value of sentenceListHash
+   * Returns the value of the sentenceHash variable.
+   * @return the value of sentenceHash
    */
-  public HashMap<Integer,Object> getSentenceListHash() {
-    return sentenceListHash; // Returns the value of sentenceListHash.
+  public HashMap<Integer,Object> getSentenceHash() {
+    return sentenceHash;
   }
 
   // setters/mutators (void)
@@ -200,7 +197,6 @@ public class Words {
   
   /**
    * Sets the adjectiveList variable.
-   * @param sentence
    */
   public void setAdjectiveList() {
     this.adjectiveList.add("blocky");
@@ -255,69 +251,32 @@ public class Words {
    * @param word Verb word.
    */
   public void setSentence() {
-//    this.sentence = getSubject() + " " + getVerb() + " " + getAdjective();
     this.sentence = getSubject() + " " + getVerb() + " " + getAdjective() + " " + getObject() + " " + getAdverb();
   }
   
   /**
-   * Sets the sentenceList variable.
+   * Add each new sentence to the sentenceList array
    * @param sentence
    */
   public void setSentenceList(Object sentence) {
-    // add each new sentence to the sentenceList array
     this.sentenceList.add(sentence);
-//    this.sentenceList.add("da fuq");
   }
   
   /**
-   * Sets the sentenceListHash variable.
+   * Add each new sentence to the sentenceHash array
    * @param sentence
    */
-  public void setSentenceListHash(Object sentence) {
-    // add each new sentence to the sentenceListHash array
-    int i = 0;
-    this.sentenceListHash.put(i++,sentence);
-//    this.sentenceListHash.add("da fuq");
+  public void setSentenceHash(Object sentence) { // HASHMAPSTUFF
+    i = 0;
+    this.sentenceHash.put(i++,sentence);
   }
 
   // other methods
-//  public void addToList() {
-//    addToList(null);
-//  }
-//  
-//  public void addToList(ArrayList listName) {
-//    addToList(listName,null,null,null);
-////    listName.add("1");
-////    listName.add("2");
-////    listName.add("3");
-//  }
-//  
-//  public void addToList(String a,String b,String c) {
-//    addToList(null,a,b,c);
-//  }
-//  
-//  public void addToList(ArrayList listName,String a,String b,String c) {
-//    listName.add(a);
-//    listName.add(b);
-//    listName.add(c);
-//  }
-//  
-//  public void generateList() {
-//    generateList(null);
-//  }
-//  
-//  public void generateList(ArrayList listName) {
-//    listName = new ArrayList<>();
-//    addToList(listName);
-////    listName.add("1");
-////    listName.add("2");
-////    listName.add("3");
-//    Print p = new Print();
-//    p.print("List:",listName);
-//  }
-  
-  public void generateLists() {
-    // generate all lists at once (because I don't want to deal with that much user input...)
+
+  /**
+   * Generate all word lists at once.
+   */
+    public void generateLists() {
     setSubjectList();
     setVerbList();
     setAdjectiveList();
@@ -331,15 +290,16 @@ public class Words {
 //    p.printList(getVerbList());
   }
   
+  /**
+   *
+   */
   public void generateSentenceList() {
       // create word lists
       generateLists();
       for (int i = 0; i < 10; i++) {
-        // generate sentence
-        generateSentence();
-        // add sentence into sentence list/generate sentence list
-        setSentenceList(getSentence());
-//        setSentenceListHash(getSentence());
+        generateSentence(); // generate sentence        
+        setSentenceList(getSentence()); // add sentence into sentence list/generate sentence list
+//        setSentenceHash(getSentenceHash()); // add sentence into sentence list/generate sentence list // HASHMAPSTUFF
       }
 //    // debugging
 //    Print p = new Print();
@@ -367,46 +327,24 @@ public class Words {
 //    p.print(getVerb());
   }
   
+  /**
+   *
+   */
   public void chooseSentence() {
     // let user choose a message from the list
     UserInput u = new UserInput();
     Integer messageNumber;
-//    Print p = new Print();
-//    p = new Print();
     // print sentence list
     p.print("","Sentence list:");
     p.printList(getSentenceList());
-//    p.printHash(getSentenceListHash());
-    // do {collect input} while user input is outside array
-    do {
-//      // print sentence list
-//      p.print("","Sentence list:");
-//      p.printList(w.getSentenceList());
+//    p.printHash(getSentenceHash()); // HASHMAPSTUFF
+    do { // do {collect input} while user input is outside array
       // collect user input
       messageNumber = u.collectUserInteger("Select a message from the list above to print that message."); // Sets index value to user input.
-//      setMessageNumber(u.collectUserInteger()); // Sets index value to user input.
     } while (messageNumber > getSentenceList().size()); // Keep iterating if user enters something outside the index.
-//    } while (messageNumber > getSentenceListHash().size()); // Keep iterating if user enters something outside the index.
+//    } while (messageNumber > getSentenceHash().size()); // Keep iterating if user enters something outside the index. // HASHMAPSTUFF
     p.print("","You chose:",p.printListElement(messageNumber - 1,getSentenceList()));
-//    p.print("","You chose:",p.printHashElement(messageNumber - 1,getSentenceListHash()));
+//    p.print("","You chose:",p.printHashElement(messageNumber - 1,getSentenceHash())); // HASHMAPSTUFF
   }
-  
-  public Integer OLDchooseSentence() {
-    // let user choose a message from the list
-    UserInput u = new UserInput();
-    Integer messageNumber;
-    // do {print list & collect input} while user input is outside array
-    do {
-//      // print sentence list
-//      p.print("","Sentence list:");
-//      p.printList(w.getSentenceList());
-      // collect user input
-      messageNumber = u.collectUserInteger("Select a message from the list above to print that message."); // Sets index value to user input.
-//      setMessageNumber(u.collectUserInteger()); // Sets index value to user input.
-    } while (messageNumber > getSentenceList().size()); // Keep iterating if user enters something outside the index.
-//    } while (messageNumber > getSentenceListHash().size()); // Keep iterating if user enters something outside the index.
-    return messageNumber - 1; // subtract 1 because the index starts at 0 not 1
-  }
-  
   
 }
