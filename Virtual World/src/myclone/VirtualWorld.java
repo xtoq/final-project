@@ -19,27 +19,29 @@ public class VirtualWorld {
 //    p.print("Welcome");
     
     // create word lists
+    // TODO: create generateLists() method to generate all words at once
     Words w = new Words();
+    w.generateLists();
     
-    w.setSubjectList();
-    w.setVerbList();
+    // generate random numbers and print the words associated with them
     
-    p.print("Subjects:");
-    p.printList(w.getSubjectList());
-    
-    p.print("","Verbs:");
-    p.printList(w.getVerbList());
-    
-    // generate random number
-    WordUp wu = new WordUp();
-    p.print("","Random subject word:");
-    p.printListElement(wu.generateRandomNumber(w.getSubjectList().size()),w.getSubjectList());
-    p.print("","Random verb word:");
-    p.printListElement(wu.generateRandomNumber(w.getVerbList().size()),w.getVerbList());
-    
-//    p.print(wu.generateRandomNumber(w.getVerbList().size()));
-//    p.print(wu.generateRandomNumber(w.getSubjectList().size()));
+    // TODO: generate 5 random sentences and set them in the array list
+    for (int i = 0; i < 5; i++) {
+      // generate sentence
+      w.generateSentence(); // do this 5 times to get a (hopefully) different sentence every time (for? do while?)
 
+      // add sentence into sentence list/generate sentence list
+      w.generateSentenceList();
+    }
+
+      // print sentence list
+      p.print("","Sentence list:");
+      p.printList(w.getSentenceList());
+    
+    
+    // TODO: let user choose a message from the list
+    
+    // TODO: print message user chose
     
     
     
@@ -48,9 +50,8 @@ public class VirtualWorld {
     
     
     
-    
-    
-    
+//    for (int i = 0; i < w.getSubjectList().size(); i++) {
+//    }
     // DO BELOW FOR EACH ARRAY LIST/WHILE ARRAY LISTS EXIST
     
     

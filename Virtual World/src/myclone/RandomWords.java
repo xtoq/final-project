@@ -13,7 +13,7 @@ import java.util.*;
  *
  * @author Smokie Lee
  */
-public class WordUp {
+public class RandomWords {
   
   // Variables
   
@@ -26,7 +26,7 @@ public class WordUp {
   /**
    * Create a new WordUp object with new array list.
    */
-  public WordUp() {
+  public RandomWords() {
     this(new ArrayList<>());
   }
   
@@ -34,7 +34,7 @@ public class WordUp {
    * Create a new WordUp object with an existing array list.
    * @param arrayList Name of array list.
    */
-  public WordUp(ArrayList arrayList) {
+  public RandomWords(ArrayList arrayList) {
     this.arrayList = arrayList;
     this.randomNumber = 0;
     this.printMessage = "";
@@ -175,7 +175,7 @@ public class WordUp {
 //   * Introduce the user to the program.
 //   */
 //  public void welcome() {
-//    System.out.printf("Welcome to the \"WordUp\" program. Let's print random words!%n");
+//    System.out.printf("Welcome to the \"RandomWords\" program. Let's print random words!%n");
 //    System.out.printf("%n\t\tCreated by Smokie Lee");
 //    System.out.printf("%n\t---------------------------------------%n%n");
 //  }
@@ -193,6 +193,10 @@ public class WordUp {
     return generateRandomNumber(0);
   }
   
+  public Integer generateRandomNumber(ArrayList listName) {
+    return generateRandomNumber(listName.size());
+  }
+  
   public Integer generateRandomNumber(Integer size) {
     Random gen = new Random();
     Integer r = gen.nextInt(size);
@@ -204,7 +208,7 @@ public class WordUp {
 //   */
 //  public static void main(String[] args) {
 //    // Create new object.
-//    WordUp w = new WordUp();
+//    RandomWords w = new RandomWords();
 //
 //    // Welcome the user.
 ////    w.welcome();

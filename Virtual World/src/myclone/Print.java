@@ -99,20 +99,25 @@ public class Print {
     }
   }
   
-  public void printListElement() {
-    printListElement(0);
+  public Object printListElement() {
+    return printListElement(0);
   }
   
-  public void printListElement(Integer wordIndex) {
-    printListElement(wordIndex,null);
+  public Object printListElement(Integer wordIndex) {
+    return printListElement(wordIndex,null);
   }
   
-  public void printListElement(ArrayList listName) {
-    printListElement(null,listName);
+  public Object printListElement(ArrayList listName) {
+    return printListElement(null,listName);
   }
   
-  public void printListElement(Integer wordIndex,ArrayList listName) {
+  public Object printListElement(Integer wordIndex,ArrayList listName) {
 //    listName.get(wordIndex);
-    System.out.printf("%s%n",listName.get(wordIndex));
+//    System.out.printf("%s%n",listName.get(wordIndex));
+    return listName.get(wordIndex);
   }
+  
+//  public Object returnListElement(Integer wordIndex,ArrayList listName) {
+//    return listName.get(wordIndex);
+//  }
 }
