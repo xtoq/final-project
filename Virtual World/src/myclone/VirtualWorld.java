@@ -31,7 +31,8 @@ public class VirtualWorld {
      
     // === shoutOutRandomMessage() ===
     w.generateSentence();
-    w.setSentenceList(w.getSentence());
+//    w.setSentenceList(w.getSentence());
+    w.setSentenceListHash(w.getSentence());
     // print sentence list
     p.print("","Random message:");
     p.print(w.getSentence());

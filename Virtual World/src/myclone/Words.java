@@ -17,7 +17,7 @@ public class Words {
   private Object subject, verb, adjective, object, adverb, sentence;
   private final ArrayList<String> subjectList, verbList, adjectiveList, objectList, adverbList/*, sentenceList*/;
   private final ArrayList<Object> sentenceList;
-//  private final HashMap<Integer, String> sentenceList;
+  private final HashMap<Integer, Object> sentenceListHash;
   private final Print p;
 
   // constructor(s)
@@ -34,6 +34,7 @@ public class Words {
     this.objectList = new ArrayList<>();
     this.adverbList = new ArrayList<>();
     this.sentenceList = new ArrayList<>();
+    this.sentenceListHash = new HashMap<>();
     this.p = new Print();
   }
 
@@ -130,6 +131,14 @@ public class Words {
    */
   public ArrayList getSentenceList() {
     return sentenceList; // Returns the value of sentenceList.
+  }
+  
+  /**
+   * Returns the value of the sentenceListHash variable.
+   * @return the value of sentenceListHash
+   */
+  public HashMap<Integer,Object> getSentenceListHash() {
+    return sentenceListHash; // Returns the value of sentenceListHash.
   }
 
   // setters/mutators (void)
@@ -259,6 +268,16 @@ public class Words {
     this.sentenceList.add(sentence);
 //    this.sentenceList.add("da fuq");
   }
+  
+  /**
+   * Sets the sentenceListHash variable.
+   * @param sentence
+   */
+  public void setSentenceListHash(Object sentence) {
+    // add each new sentence to the sentenceListHash array
+    this.sentenceListHash.put(1,sentence);
+//    this.sentenceListHash.add("da fuq");
+  }
 
   // other methods
 //  public void addToList() {
@@ -318,7 +337,8 @@ public class Words {
         // generate sentence
         generateSentence();
         // add sentence into sentence list/generate sentence list
-        setSentenceList(getSentence());
+//        setSentenceList(getSentence());
+        setSentenceListHash(getSentence());
       }
 //    // debugging
 //    Print p = new Print();
@@ -354,7 +374,8 @@ public class Words {
 //    p = new Print();
     // print sentence list
     p.print("","Sentence list:");
-    p.printList(getSentenceList());
+//    p.printList(getSentenceList());
+    p.printHash(getSentenceListHash());
     // do {collect input} while user input is outside array
     do {
 //      // print sentence list
@@ -363,8 +384,10 @@ public class Words {
       // collect user input
       messageNumber = u.collectUserInteger("Select a message from the list above to print that message."); // Sets index value to user input.
 //      setMessageNumber(u.collectUserInteger()); // Sets index value to user input.
-    } while (messageNumber > getSentenceList().size()); // Keep iterating if user enters something outside the index.
-    p.print("","You chose:",p.printListElement(messageNumber - 1,getSentenceList()));
+//    } while (messageNumber > getSentenceList().size()); // Keep iterating if user enters something outside the index.
+    } while (messageNumber > getSentenceListHash().size()); // Keep iterating if user enters something outside the index.
+//    p.print("","You chose:",p.printListElement(messageNumber - 1,getSentenceList()));
+    p.print("","You chose:",p.printHashElement(messageNumber - 1,getSentenceListHash()));
   }
   
   public Integer OLDchooseSentence() {
@@ -379,7 +402,8 @@ public class Words {
       // collect user input
       messageNumber = u.collectUserInteger("Select a message from the list above to print that message."); // Sets index value to user input.
 //      setMessageNumber(u.collectUserInteger()); // Sets index value to user input.
-    } while (messageNumber > getSentenceList().size()); // Keep iterating if user enters something outside the index.
+//    } while (messageNumber > getSentenceList().size()); // Keep iterating if user enters something outside the index.
+    } while (messageNumber > getSentenceListHash().size()); // Keep iterating if user enters something outside the index.
     return messageNumber - 1; // subtract 1 because the index starts at 0 not 1
   }
   

@@ -99,6 +99,20 @@ public class Print {
     }
   }
   
+  /**
+   * Prints the list of messages.
+   * @param messageList
+   * @return Returns the hash map as a formatted list.
+   */
+  public String printHash(HashMap<Integer, Object> messageList) { // PRINT MESSAGE LIST
+//    System.out.printf("Message List:%n");
+    int order = 1; // Counter for the numbered list.
+    for (Map.Entry<Integer, Object> entry : messageList.entrySet()) { // Enhanced for loop is more efficient here.
+      System.out.printf("%s. %s%n", entry.getKey(), entry.getValue()); // Print key and value as a list.
+    }
+    return "";
+  }
+  
   public Object printListElement() {
     return printListElement(0);
   }
@@ -116,6 +130,13 @@ public class Print {
 //    System.out.printf("%s%n",listName.get(wordIndex));
     return listName.get(wordIndex);
   }
+  
+  public Object printHashElement(Integer wordIndex,HashMap listName) {
+//    listName.get(wordIndex);
+//    System.out.printf("%s%n",listName.get(wordIndex));
+    return listName.get(wordIndex);
+  }
+  
   
 //  public Object returnListElement(Integer wordIndex,ArrayList listName) {
 //    return listName.get(wordIndex);
