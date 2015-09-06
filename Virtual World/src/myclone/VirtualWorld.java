@@ -16,24 +16,26 @@ public class VirtualWorld {
 //    HashMap<Integer,String> list = new HashMap<>();
     
     // welcome user
-//    Print p = new Print();
+    Print p = new Print();
 //    p.print("Welcome");
     
-    // create word lists
-    // TODO: create generateLists() method to generate all words at once
-    w.generateLists();
-    
+    // === shoutOutCannedMessage() ===
     // generate sentences
     w.generateSentenceList();
     
     // let user choose a message from the list to print
-     w.chooseSentence();
+    w.chooseSentence();
+    // === end shoutOutCannedMessage() ===
+    
+    
      
-//    p.print("","You chose:",p.printListElement(w.OLDchooseSentence(),w.getSentenceList()));
-    // FUTURE: do a better UX for when you enter something outside the array list indexes.
-    // w.getSentence();
-
-
+    // === shoutOutRandomMessage() ===
+    w.generateSentence();
+    w.setSentenceList(w.getSentence());
+    // print sentence list
+    p.print("","Random message:");
+    p.print(w.getSentence());
+    // === end shoutOutRandomMessage() ===
 
 
 

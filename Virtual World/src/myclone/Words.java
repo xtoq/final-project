@@ -15,10 +15,10 @@ public class Words {
   
   // initialize variables
   private Object subject, verb, adjective, object, adverb, sentence;
-//  private HashMap<> list;
-//  private final HashMap<Integer, String> wordList;
   private final ArrayList<String> subjectList, verbList, adjectiveList, objectList, adverbList/*, sentenceList*/;
   private final ArrayList<Object> sentenceList;
+//  private final HashMap<Integer, String> sentenceList;
+  private final Print p;
 
   // constructor(s)
   public Words() {
@@ -27,13 +27,14 @@ public class Words {
     this.adjective = "";
     this.object = "";
     this.adverb = "";
-    this.sentence = subject + " " + verb + " " + adjective + " " + object + " " + adverb + ".";
+    this.sentence = subject + " " + verb + " " + adjective + " " + object + " " + adverb;
     this.subjectList = new ArrayList<>();
     this.verbList = new ArrayList<>();
     this.adjectiveList = new ArrayList<>();
     this.objectList = new ArrayList<>();
     this.adverbList = new ArrayList<>();
     this.sentenceList = new ArrayList<>();
+    this.p = new Print();
   }
 
   // getters/accessors (return)
@@ -311,7 +312,8 @@ public class Words {
   }
   
   public void generateSentenceList() {
-//    setSentenceList(getSentence());
+      // create word lists
+      generateLists();
       for (int i = 0; i < 10; i++) {
         // generate sentence
         generateSentence();
@@ -329,7 +331,8 @@ public class Words {
    */
   public void generateSentence() {
     RandomWords rw = new RandomWords();
-    Print p = new Print();
+//    Print p = new Print();
+    generateLists();
     setSubject(p.printListElement(rw.generateRandomNumber(getSubjectList()),getSubjectList()));
     setVerb(p.printListElement(rw.generateRandomNumber(getVerbList()),getVerbList()));
     setAdjective(p.printListElement(rw.generateRandomNumber(getAdjectiveList()),getAdjectiveList()));
@@ -347,7 +350,8 @@ public class Words {
     // let user choose a message from the list
     UserInput u = new UserInput();
     Integer messageNumber;
-    Print p = new Print();
+//    Print p = new Print();
+//    p = new Print();
     // print sentence list
     p.print("","Sentence list:");
     p.printList(getSentenceList());
