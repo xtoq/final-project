@@ -275,7 +275,8 @@ public class Words {
    */
   public void setSentenceListHash(Object sentence) {
     // add each new sentence to the sentenceListHash array
-    this.sentenceListHash.put(1,sentence);
+    int i = 0;
+    this.sentenceListHash.put(i++,sentence);
 //    this.sentenceListHash.add("da fuq");
   }
 
@@ -337,8 +338,8 @@ public class Words {
         // generate sentence
         generateSentence();
         // add sentence into sentence list/generate sentence list
-//        setSentenceList(getSentence());
-        setSentenceListHash(getSentence());
+        setSentenceList(getSentence());
+//        setSentenceListHash(getSentence());
       }
 //    // debugging
 //    Print p = new Print();
@@ -374,8 +375,8 @@ public class Words {
 //    p = new Print();
     // print sentence list
     p.print("","Sentence list:");
-//    p.printList(getSentenceList());
-    p.printHash(getSentenceListHash());
+    p.printList(getSentenceList());
+//    p.printHash(getSentenceListHash());
     // do {collect input} while user input is outside array
     do {
 //      // print sentence list
@@ -384,10 +385,10 @@ public class Words {
       // collect user input
       messageNumber = u.collectUserInteger("Select a message from the list above to print that message."); // Sets index value to user input.
 //      setMessageNumber(u.collectUserInteger()); // Sets index value to user input.
-//    } while (messageNumber > getSentenceList().size()); // Keep iterating if user enters something outside the index.
-    } while (messageNumber > getSentenceListHash().size()); // Keep iterating if user enters something outside the index.
-//    p.print("","You chose:",p.printListElement(messageNumber - 1,getSentenceList()));
-    p.print("","You chose:",p.printHashElement(messageNumber - 1,getSentenceListHash()));
+    } while (messageNumber > getSentenceList().size()); // Keep iterating if user enters something outside the index.
+//    } while (messageNumber > getSentenceListHash().size()); // Keep iterating if user enters something outside the index.
+    p.print("","You chose:",p.printListElement(messageNumber - 1,getSentenceList()));
+//    p.print("","You chose:",p.printHashElement(messageNumber - 1,getSentenceListHash()));
   }
   
   public Integer OLDchooseSentence() {
@@ -402,8 +403,8 @@ public class Words {
       // collect user input
       messageNumber = u.collectUserInteger("Select a message from the list above to print that message."); // Sets index value to user input.
 //      setMessageNumber(u.collectUserInteger()); // Sets index value to user input.
-//    } while (messageNumber > getSentenceList().size()); // Keep iterating if user enters something outside the index.
-    } while (messageNumber > getSentenceListHash().size()); // Keep iterating if user enters something outside the index.
+    } while (messageNumber > getSentenceList().size()); // Keep iterating if user enters something outside the index.
+//    } while (messageNumber > getSentenceListHash().size()); // Keep iterating if user enters something outside the index.
     return messageNumber - 1; // subtract 1 because the index starts at 0 not 1
   }
   
