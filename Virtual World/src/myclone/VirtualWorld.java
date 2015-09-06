@@ -16,34 +16,67 @@ public class VirtualWorld {
     
     // welcome user
     Print p = new Print();
-    p.print("Welcome");
+//    p.print("Welcome");
     
     // create word lists
-    ArrayList<String> wordList = new ArrayList<>();
-    wordList.add("wordList-1");
-    wordList.add("wordList-2");
-    wordList.add("wordList-3");
-    p.print("List:",wordList);
+    Words w = new Words();
+    
+    w.setSubjectList();
+    w.setVerbList();
+    
+    p.print("Subjects:");
+    p.printList(w.getSubjectList());
+    
+    p.print("","Verbs:");
+    p.printList(w.getVerbList());
+    
+    // generate random number
+    WordUp wu = new WordUp();
+    p.print("","Random subject word:");
+    p.printListElement(wu.generateRandomNumber(w.getSubjectList().size()),w.getSubjectList());
+    p.print("","Random verb word:");
+    p.printListElement(wu.generateRandomNumber(w.getVerbList().size()),w.getVerbList());
+    
+//    p.print(wu.generateRandomNumber(w.getVerbList().size()));
+//    p.print(wu.generateRandomNumber(w.getSubjectList().size()));
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    // DO BELOW FOR EACH ARRAY LIST/WHILE ARRAY LISTS EXIST
+    
     
     // generate random number
 //    Random g = new Random();
-//    Integer r = g.nextInt(wordList.size());
+//    Integer r = g.nextInt(subjectList.size());
 //    p.print(r);
     
     // print word in array based on random number
-//    p.print("Random word:",wordList.get(r));
+//    p.print("Random word:",subjectList.get(r));
     
-    for (int i = 0; i < wordList.size(); i++) {
-      // generate random number
-      Random g = new Random();
-      Integer r = g.nextInt(wordList.size());
-      p.print();
-      p.print("Random #:",r);
-      // print word in array based on random number
-      p.print("Random word:",wordList.get(r));
-    }
+    // DO ABOVE FOR EACH ARRAY LIST/WHILE ARRAY LISTS EXIST
     
+    // picks a different number and prints a word based on the size of the list...not exactly what we want
+//    for (int i = 0; i < subjectList.size(); i++) {
+//      // generate random number
+//      Random g = new Random();
+//      Integer r = g.nextInt(subjectList.size());
+//      p.print();
+//      p.print("Random #:",r);
+//      // print word in array based on random number
+//      p.print("Random word:",subjectList.get(r));
+//    }
     
+//    for (int i = 0; i < subjectList.size(); i++) {
+//    }
     
     
     // create sentence list
