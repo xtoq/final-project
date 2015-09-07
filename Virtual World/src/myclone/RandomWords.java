@@ -10,13 +10,11 @@ import java.util.*;
 public class RandomWords {
   
   // === Variables ===
-  
   private final ArrayList arrayList;
   private Integer randomNumber;
   private String printMessage;
   
   // === Constructors ===
-  
   /**
    * Create a new WordUp object with new array list.
    */
@@ -35,7 +33,6 @@ public class RandomWords {
   }
   
   // === Accessors ===
-  
   /**
    * Returns value of arrayList as an array.
    * @return arrayList

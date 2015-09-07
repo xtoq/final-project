@@ -6,6 +6,8 @@ import java.util.*;
  * @author Smokie Lee
  */
 public class Print {
+  
+  // === Variables ===
   private final Object x;
   
   /**
