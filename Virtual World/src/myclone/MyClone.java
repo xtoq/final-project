@@ -140,9 +140,16 @@ public final class MyClone {
   /**
    * Introduce the user to the program.
    */
-  public void introduction() {
+  public void welcome() {
     System.out.printf("\tWelcome to the \"Virtual World\" program!%n\t\tCreated by Smokie Lee");
     System.out.printf("%n\t---------------------------------------%n%n");
+  }
+
+  /**
+   * Introduce the user to the program.
+   */
+  public void introduction() {
+    welcome();
     collectName();
     System.out.printf("%nYour clone's name is %s.%n",getFullName());
   }
@@ -150,7 +157,7 @@ public final class MyClone {
   /**
    * Thanks the user and ends the program.
    */
-  public void end() {
+  public void thanks() {
     System.out.printf("%n%n\t---------------------------------------%n");
     System.out.printf("\t\tThanks for playing!%n");
   }
