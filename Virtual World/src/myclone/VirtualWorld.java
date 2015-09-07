@@ -1,7 +1,5 @@
 package myclone;
 
-import java.util.*;
-
 /**
  * @author Smokie Lee
  */
@@ -12,36 +10,23 @@ public class VirtualWorld {
    */
   public static void main(String[] args) {
     // milestone 4
-    Words w = new Words();
+    ShoutBox s = new ShoutBox();
+    MyClone m = new MyClone();
     Print p = new Print();
-    // TODO: add welcome message
     
-    // === shoutOutCannedMessage() ===
-    // generate sentences
-    w.generateSentenceList();
-    // let user choose a message from the list to print
-    w.chooseSentence();
-    // === end shoutOutCannedMessage() ===
+    // Welcome the user.
+    m.welcome();
     
-    // === shoutOutRandomMessage() ===
-    w.generateSentence();
-    w.setSentenceList(w.getSentence());
-//    w.setSentenceHash(w.getSentence()); // HASHMAPSTUFF
-    // print sentence list
-    p.print("","Random message:");
-    p.print(w.getSentence());
-    // === end shoutOutRandomMessage() ===
-  
+    // Generate random sentences so the user can choose one.
+    p.print("","--- shoutOutCannedMessage() ---");
+    s.shoutOutCannedMessage();
     
-//    w.generateSentenceList();
-//    w.chooseSentence();
+    // Generate a random sentence.
+    p.print("","--- shoutOutRandomMessage() ---");
+    s.shoutOutRandomMessage();
     
-    
-    // create sentence list
-    // print message/sentence list
-    // select message/sentence
-    // print selected message/sentence
-    // thank user
+    // Thank the user.
+    m.thanks();
     
 //    // milestone 3    
 //    MyClone clone = new MyClone();
@@ -49,7 +34,7 @@ public class VirtualWorld {
 //    clone.introduction();
 //    shout.collect();
 //    shout.shoutOutCannedMessage();
-//    clone.end();
+//    clone.thanks();
   }
 
 }

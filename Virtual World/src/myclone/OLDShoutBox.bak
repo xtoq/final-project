@@ -1,6 +1,6 @@
 package myclone;
 
-import java.util.*;
+import java.util.*; // Since we need 3 imports, this seems more prudent. Also endorsed by the Java documentation.
 
 /**
  * The ShoutBox class collects and displays user messages.
@@ -10,9 +10,8 @@ public class ShoutBox {
 
   private final HashMap<Integer, String> messageList;
   private final String singleMessage;
-  private final Print p;
   private Integer numMessages;
-  private UserInput u = new UserInput();
+  private UserInput u = new UserInput(); // TODO: probably delete this and put it in each method instead?
   private Integer messageNumber;
 
   /**
@@ -21,7 +20,6 @@ public class ShoutBox {
   public ShoutBox() {
     this.messageList = new HashMap<>();
     this.singleMessage = "No message";
-    this.p = new Print();
     this.numMessages = 10;
     this.u = null;
     this.messageNumber = 1;
@@ -39,7 +37,7 @@ public class ShoutBox {
    * Returns the message list as a hash map.
    * @return messageList
    */
-  public HashMap<Integer, String> getMessageList() {
+  public HashMap<Integer, String> getMessageList() { // RETURN A HASHMAP!
     return messageList;
   }
   
@@ -47,7 +45,7 @@ public class ShoutBox {
    * Returns a single message from the list.
    * @return singleMessage Return a value from the hash map that corresponds to the messageNumber.
    */
-  public String getSingleMessage() {
+  public String getSingleMessage() { // PRINT SINGLE MESSAGE
     return getSingleMessage(messageNumber);
   }
   
@@ -56,7 +54,7 @@ public class ShoutBox {
    * @param messageNumber Index of a value in the hash map.
    * @return singleMessage Return a value from the hash map that corresponds to the messageNumber.
    */
-  public String getSingleMessage(Integer messageNumber) {
+  public String getSingleMessage(Integer messageNumber) { // PRINT SINGLE MESSAGE
     return singleMessage;
   }
   
@@ -67,6 +65,10 @@ public class ShoutBox {
   public Integer getMessageNumber() {
     return messageNumber;
   }
+  
+//  public void setMessages() {
+//    this.messages = printList();
+//  }
   
   /**
    * Sets the number of messages in the list.
@@ -217,13 +219,9 @@ public class ShoutBox {
   
   /**
    * Allows the user to select a message from the list, then prints the selected message.
-   * @return message corresponding to the number the user choose
    */
-  public String shoutOutCannedMessage() {
-    Words w = new Words();
-    w.generateSentenceList(); // Generate and print sentence list.
-    w.chooseSentence(); // Let user choose a message from the list to print.
-    return "";
+  public void shoutOutCannedMessage() {
+    printMessage(selectMessage());
   }
   
   /**
@@ -234,16 +232,5 @@ public class ShoutBox {
     collectMessages();
   }
 
-  /**
-   * Generate a random sentence.
-   * @return random sentence
-   */
-    public String shoutOutRandomMessage() {
-    Words w = new Words();
-    w.generateSentence(); // Generate random sentence.
-//    w.setSentenceList(w.getSentence()); // Set random sentence into sentence list.
-    p.print("","Random message:");
-    p.print(w.getSentence()); // Print randomly generated sentence.
-    return "";
-  }
+  // TODO: must have shoutOutCanneMessage() and shoutOutRandomMessage() methods
 }
