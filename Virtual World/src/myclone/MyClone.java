@@ -5,11 +5,13 @@ package myclone;
  * @author Smokie Lee
  */
 public final class MyClone {
-
+  
+  // === Variables ===
   private String firstName;
   private String lastName;
   private String fullName;
-  
+
+  // === Constructors ===
   /**
    * Create a clone with default values.
    */
@@ -52,6 +54,7 @@ public final class MyClone {
     this.fullName = fullName;
   }
 
+  // === Accessors ===
   /**
    * Returns the value of firstName.
    * @return firstName
@@ -76,6 +79,7 @@ public final class MyClone {
     return fullName;
   }
   
+  // === Mutators ===
   /**
    * Sets the firstName variable.
    */

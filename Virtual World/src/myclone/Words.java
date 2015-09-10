@@ -8,7 +8,7 @@ import java.util.*;
  */
 public class Words {
   
-  // === Initialize variables ===
+  // === Variables ===
   private Object subject, verb, adjective, object, adverb, sentence;
   private final ArrayList<String> subjectList, verbList, adjectiveList, objectList, adverbList;
   private final ArrayList<Object> sentenceList;
@@ -17,7 +17,6 @@ public class Words {
   private Integer i;
 
   // === Constructor(s) ===
-
   /**
    * Initialize all variables.
    */
@@ -39,7 +38,7 @@ public class Words {
     this.i = 0;
   }
 
-  // === Getters/accessors ===
+  // === Accessors ===
   /**
    * Returns the value of the subject variable.
    * @return the value of subject
@@ -146,8 +145,7 @@ public class Words {
     return sentenceHash;
   }
 
-  // === Setters/mutators ===
-
+  // === Mutators ===
   /**
    * Sets the subject variable.
    */
@@ -282,7 +280,6 @@ public class Words {
   }
 
   // === Other methods ===
-
   /**
    * Generate all word lists at once.
    */

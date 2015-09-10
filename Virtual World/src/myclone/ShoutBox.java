@@ -7,7 +7,8 @@ import java.util.*;
  * @author Smokie Lee
  */
 public class ShoutBox {
-
+  
+  // === Variables ===
   private final HashMap<Integer, String> messageList;
   private final String singleMessage;
   private final Print p;
