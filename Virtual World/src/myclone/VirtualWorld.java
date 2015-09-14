@@ -13,28 +13,21 @@ public class VirtualWorld {
     ShoutBox s = new ShoutBox();
     MyClone m = new MyClone();
     Print p = new Print();
+    UserInput u = new UserInput();
     
     // Welcome the user.
-    m.welcome();
+    m.introduction();
     
-    // Generate random sentences so the user can choose one.
-    p.print("","--- shoutOutCannedMessage() ---");
-    s.shoutOutCannedMessage();
-    
-    // Generate a random sentence.
-    p.print("","--- shoutOutRandomMessage() ---");
-    s.shoutOutRandomMessage();
+    Boolean r = u.yesOrNo();
+    if (r == true) {
+        s.shoutOutRandomMessage();
+    }
+    else {
+      s.shoutOutCannedMessage();
+    }
     
     // Thank the user.
     m.thanks();
-    
-//    // milestone 3    
-//    MyClone clone = new MyClone();
-//    ShoutBox shout = new ShoutBox();
-//    clone.introduction();
-//    shout.collect();
-//    shout.shoutOutCannedMessage();
-//    clone.thanks();
   }
 
 }

@@ -162,7 +162,7 @@ public final class MyClone {
    * Thanks the user and ends the program.
    */
   public void thanks() {
-    System.out.printf("%n%n\t---------------------------------------%n");
+    System.out.printf("%n\t---------------------------------------%n");
     System.out.printf("\t\tThanks for playing!%n");
   }
 
