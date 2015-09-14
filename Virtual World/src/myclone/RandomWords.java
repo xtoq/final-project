@@ -16,14 +16,14 @@ public class RandomWords {
   
   // === Constructors ===
   /**
-   * Create a new WordUp object with new array list.
+   * Create a new RandomWords object with new array list.
    */
   public RandomWords() {
     this(new ArrayList<>());
   }
   
   /**
-   * Create a new WordUp object with an existing array list.
+   * Create a new RandomWords object with an existing array list.
    * @param arrayList Name of array list.
    */
   public RandomWords(ArrayList arrayList) {

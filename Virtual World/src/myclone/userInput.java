@@ -102,4 +102,32 @@ public class UserInput {
   public void setUserInteger(Integer userInteger) {
     this.userInteger = userInteger;
   }
+  
+  /**
+   * Get the next line of user input.
+   * @return userString Returns the next string input by the user.
+   */
+  public String go() {
+//    return collectUserString("");
+    String pattern = "([ ])";
+    userInputScanner.useDelimiter(pattern);
+    return userString = userInputScanner.nextLine();
+  }
+  
+  public Boolean yesOrNo() {
+    // Set a regex pattern for matching input.
+    String yesPattern = "([YyEeSs])\\w+|([Yy])"; // Matches "y" input.
+    String noPattern = "([NnOo])\\w+|([Nn])"; // Matches "n" input.
+    Boolean randSent = false;
+    System.out.printf("%nDo you want to print a random sentence? Y/N%n>> ");
+    if (userInputScanner.hasNext(yesPattern) | userInputScanner.hasNext(noPattern)) { // If the user enters either y or n, run the loop.
+      if (userInputScanner.hasNext(yesPattern)) { // If the user enters y, run this loop.
+        randSent = true;
+      }
+      else if (userInputScanner.hasNext(noPattern)) { // If the user enters n, run this loop.
+        randSent = false;
+      }
+    }
+    return randSent;
+  }
 }
